@@ -1,0 +1,39 @@
+// This file contains all the base styles for the application.
+@use 'mixins';
+@use 'variables';
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include mixins.respond(laptop) {
+    font-size: 62.5%;
+  }
+
+  @include mixins.respond(tablet) {
+    font-size: 50%;
+  }
+
+  @include mixins.respond(phone) {
+    font-size: 30%;
+  }
+
+  @include mixins.respond(big-screen) {
+    font-size: 75%;
+  }
+}
+
+body {
+  background-color: variables.$color-grey-background;
+
+  a {
+    text-decoration: none;
+  }
+}
